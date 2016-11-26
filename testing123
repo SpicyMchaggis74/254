@@ -1,0 +1,31 @@
+#! /bin/bash
+
+echo "all the command line:"
+echo $@
+echo $*
+
+myfunctionName ()
+{
+	echo ~/
+	echo $1 $2   $3	
+}
+
+#if [ $* == "cat" ]; then
+#	echo "its a cat"
+#else
+#	echo "its not a cat"
+#fi
+
+
+V='myfunctionName'
+
+echo $V
+
+#for i in $*;do
+#	echo $i
+#done
+
+
+#while  shift 1; do
+#	echo $1
+#one	

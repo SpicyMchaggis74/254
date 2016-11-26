@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "the file is $1!"
+
+# we want tot move the file from the old name to the new name.
+# cp old.jpg new.jpg
+#
+#step 1: figure out base name
+BASENAME=`basename $1 .jpg`
+NEWNAME=${BASENAME}-mini.jpg
+echo "The basename is ${BASENAME}"
+
+#step 2: cp thefile from oldname to new name from the basename
+#cp $1 ${BASENAME}-mini.jpg
+gm convert ${1} -resize 120x120 ${NEWNAME}
+
+#step3: move the file to dec
+scp ${NEWNAME} holmess@dec.ecs.ecs.fullerton.edu ./${NEWNAME}
